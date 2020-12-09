@@ -2,6 +2,7 @@
 
 const {
     VisualGridRunner,
+    RunnerOptions,
     Eyes,
     Target,
     Configuration,
@@ -25,7 +26,8 @@ describe('playwright', function () {
         page = await context.newPage();
         
         // Create a runner with concurrency of 1
-        runner = new VisualGridRunner(1);
+        const runnerOptions = new RunnerOptions().testConcurrency(1)
+        runner = new VisualGridRunner(runnerOptions);
 
         // Create Eyes object with the runner, meaning it'll be a Visual Grid eyes.
         eyes = new Eyes(runner);
