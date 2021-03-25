@@ -76,7 +76,7 @@ describe('playwright', function () {
         await eyes.check('App Window', Target.window().fully());
 
         // Call Close on eyes to let the server know it should display the results
-        await eyes.close();
+        await eyes.closeAsync();
     });
 
     afterEach(async () => {
