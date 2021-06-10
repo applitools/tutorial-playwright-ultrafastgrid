@@ -15,13 +15,14 @@ const {
 const playwright = require('playwright')
 
 let eyes;
+const headless = process.env.CI === "true";
 
 describe('playwright', function () {
     let runner, browser, page
 
     beforeEach(async () => {
         // Initialize the playwright browser
-        browser = await playwright.chromium.launch()
+        browser = await playwright.chromium.launch({headless})
         const context = await browser.newContext();
         page = await context.newPage();
         
@@ -76,7 +77,7 @@ describe('playwright', function () {
         await eyes.check('App Window', Target.window().fully());
 
         // Call Close on eyes to let the server know it should display the results
-        await eyes.closeAsync();
+        await eyes.close(false);
     });
 
     afterEach(async () => {
@@ -84,7 +85,7 @@ describe('playwright', function () {
         await browser.close()
 
         // If the test was aborted before eyes.close was called, ends the test as aborted.
-        await eyes.abortIfNotClosed();
+        await eyes.abort();
 
         // we pass false to this method to suppress the exception that is thrown if we
         // find visual differences
