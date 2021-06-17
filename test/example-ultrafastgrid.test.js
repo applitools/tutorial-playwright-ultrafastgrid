@@ -37,7 +37,7 @@ describe('playwright', function () {
         const configuration = new Configuration();
 
         // create a new batch info instance and set it to the configuration
-        configuration.setBatch(new BatchInfo('Ultrafast Batch'))
+        configuration.setBatch(new BatchInfo('Demo Batch - Playwright - Ultrafast'))
 
         // Add browsers with different viewports
         configuration.addBrowser(800, 600, BrowserType.CHROME);
@@ -64,7 +64,7 @@ describe('playwright', function () {
         await page.goto('https://demo.applitools.com');
 
         // Call Open on eyes to initialize a test session
-        await eyes.open(page, 'Demo App', 'Ultrafast grid demo', new RectangleSize(800, 600));
+        await eyes.open(page, 'Demo App - Playwright - Ultrafast', 'Smoke Test - Playwright - Ultrafast', new RectangleSize(800, 600));
 
         // check the login page with fluent api, see more info here
         // https://applitools.com/docs/topics/sdk/the-eyes-sdk-check-fluent-api.html
