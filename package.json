@@ -9,7 +9,7 @@
   "author": "Applitools Team <team@applitools.com> (http://www.applitools.com/)",
   "license": "ISC",
   "dependencies": {
-    "@applitools/eyes-playwright": "^1.8.3",
+    "@applitools/eyes-playwright": "^1.9.0",
     "mocha": "^8.4.0",
     "playwright": "^1.13.1"
   }
