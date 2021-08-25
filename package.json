@@ -11,6 +11,6 @@
   "dependencies": {
     "@applitools/eyes-playwright": "^1.9.1",
     "mocha": "^8.4.0",
-    "playwright": "^1.14.0"
+    "playwright": "^1.14.1"
   }
 }
