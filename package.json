@@ -12,5 +12,8 @@
     "@applitools/eyes-playwright": "^1.11.3",
     "mocha": "^8.4.0",
     "playwright": "^1.22.0"
+  },
+  "engines": {
+    "node": ">=12.13.0"
   }
 }
